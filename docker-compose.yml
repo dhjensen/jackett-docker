@@ -8,10 +8,9 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - jackett_data:/config:rw
     ports:
-      - "127.0.0.1:9117:9117"
+      - '27.0.0.1:9117:9117'
     networks:
       - backend
-      - nginx-proxy-manager_frontend
     restart: unless-stopped
     labels:
       - wud.tag.include=^\d+\.\d+\.\d+$$
@@ -21,9 +20,6 @@ networks:
   backend:
     external: true
     driver: bridge
-  nginx-proxy-manager_frontend:
-    driver: bridge
-    external: true
-
+    
 volumes:
   jackett_data:
