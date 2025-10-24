@@ -8,7 +8,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - jackett_data:/config:rw
     ports:
-      - '27.0.0.1:9117:9117'
+      - '127.0.0.1:9117:9117'
     networks:
       - backend
     restart: unless-stopped
